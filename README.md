@@ -1,26 +1,53 @@
 # TP1-ENSAO-GI4
 
--->creation la couche MaterielDAO  une sorte d'une base de donnee static:
+Spring respecte un principe comme montre la figure :
 
--creation une liste des matériaux( contient chaise et livre) puis faire l'initilisation dans le constructeur
-implementaion des méthodes CRUD
 
--->Injection
-sépération du bean materieldao des autres bean dans un autre context puis l'importer dans app-context
-materielDao injection via constructeur : 
+![alt text](https://objis.com/wp-content/uploads/2009/04/tutoriel_spring_objis_introduction_spring_mvc_2.png)
 
--->creation des services et leurs implémentations : 
-service pour chaque model
 
-1-service générique de l'application: Materiel
+Nous avons essayer de respecter cette convention. Donc les principaux packages du projet sont : 
+  
+1- Le Package /ensa/gi4/DAO ==> Fournit tous les fonctionnalités(ajout, suppression,modification,...) en relation avec la base de données (representer par une liste). 
 
-2-impl service generique: 
 
-injection du materielDAO via construteur
+2- Le Package /ensa/gi4/controller ==> dans lequel est dévelopé le contrôleur de l'application. 
 
-injection des services de chaise et  livre via accesseur
+3-Le Package /ensa/gi4/modele ==> contient la definition des trois modeles (Materiel, Livre, et chaise)
 
-pour toutes methodes implémentées donner le choix à l utilisateur de choisir entre une chaise ou un livre,
-puis selon le choix instancier le service convenable
+4-Le package src/beans ==> Contient la declaration des beans de notre projet (sépération du bean materieldao des autres bean dans un autre context puis l'importer dans app-context)
 
-pour les services des autres types de materiel vont heriter du service generique qui esr materiel
+5-Le Package /ensa/gi4/service ==> Represente les services de gestion de materiels, de livres et de chaises
+
++ Pour les models : 
+
+    Chaque materiel (livre, chaise) est identifié par un nom et les accesseurs associés
+
+
++ Pour la Gestionmateriels, elle implemente les services : 
+
+ (a) init ==> qui permet d'initialiser le service avec un affichage;
+ 
+ (b) listerMateriel ==> qui permet de lister les Materiaux à travers la couche DAO;
+ 
+ (c)AjouterNouveauMateriel/supprimerMateriel/modifierMateriel/chercherMateriel ==> qui permet de decider si on veutr ajouter/supprimer/modifier/chercher un livre ou chaise et par la suite deleger le travail au service correcpondant (gestionLivreservice ou gestionChaiseservice  
+
+
+
++ Pour les Libraries, nous avons importer la liste suivante : 
+
+1- spring-beans
+
+2- spring-context
+
+3-spring-core
+
+4-spring-expression
+
+5-commons-logging
+
+
+
+
+
+
