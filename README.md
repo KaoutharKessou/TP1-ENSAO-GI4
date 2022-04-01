@@ -38,7 +38,7 @@ Nous avons essayer de respecter cette convention. Donc les principaux packages d
 
 + Pour les Libraries, nous avons importer la liste suivante : 
 
-1- spring-beans
+1-commons-logging
 
 2- spring-context
 
@@ -46,7 +46,7 @@ Nous avons essayer de respecter cette convention. Donc les principaux packages d
 
 4-spring-expression
 
-5-commons-logging
+5-spring-beans
 
 
 
