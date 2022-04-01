@@ -1,5 +1,5 @@
 # TP1-ENSAO-GI4
-//Commentaires
+
 -->creation la couche MaterielDAO  une sorte d'une base de donnee static
 creation une liste des matériaux( contient chaise et livre) puis faire l'initilisation dans le constructeur
 implementaion des méthodes CRUD
